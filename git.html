@@ -1,4 +1,236 @@
-<html>
-    <h1>Mithun</h1>
-    <h2>hello</h2>
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge"> 
+	<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1.0"> 
+	<title>GeeksForGeeks</title> 
+	<link rel="stylesheet"
+		href="git.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+z0I5t9oTjgfAFMye2o2lFAiBfu66VvfTtmIzU0JFkL9urlciRsZLXfMzH/Fg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet"
+		href="responsive.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+z0I5t9oTjgfAFMye2o2lFAiBfu66VvfTtmIzU0JFkL9urlciRsZLXfMzH/Fg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head> 
+
+<body> 
+	
+	<header> 
+
+		<div class="logosec"> 
+			<img src= 
+"data:image/png;base64,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"
+				class="icn menuicn"
+				id="menuicn"
+				alt="menu-icon" width="80px"> 
+		</div> 
+
+		<div class="searchbar"> 
+			<input type="text"
+				placeholder="Search"> 
+			<div class="searchbtn"> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+					class="icn srchicn"
+					alt="search-icon"> 
+			</div> 
+		</div> 
+
+		<div class="message"> 
+			<div class="circle"></div> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+				class="icn"
+				alt=""> 
+			<div class="dp"> 
+			<img src= 
+"https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
+					class="dpicn"
+					alt="dp"> 
+			</div> 
+		</div> 
+
+	</header> 
+
+	<div class="main-container"> 
+		<div class="navcontainer"> 
+			<nav class="nav"> 
+				<div class="nav-upper-options"> 
+					<div class="nav-option option1"> 
+						<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+							class="nav-img"
+							alt="dashboard"> 
+						<h3> Dashboard</h3> 
+					</div> 
+
+					<div class="option2 nav-option"> 
+						<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
+							class="nav-img"
+							alt="articles"> 
+						<h3> Articles</h3> 
+					</div> 
+
+					<div class="nav-option option3"> 
+						<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
+							class="nav-img"
+							alt="report"> 
+						<h3> Report</h3> 
+					</div> 
+
+					<div class="nav-option option4"> 
+						<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
+							class="nav-img"
+							alt="institution"> 
+						<h3> Institution</h3> 
+					</div> 
+
+					<div class="nav-option option5"> 
+						<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
+							class="nav-img"
+							alt="blog"> 
+						<h3> Profile</h3> 
+					</div> 
+
+					<div class="nav-option option6"> 
+						<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
+							class="nav-img"
+							alt="settings"> 
+						<h3> Settings</h3> 
+					</div> 
+
+					<div class="nav-option logout"> 
+						<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png"
+							class="nav-img"
+							alt="logout"> 
+						<h3>Logout</h3> 
+					</div> 
+                    <div class="sidebar-report">
+                        <h5>Found a bug?</h5>
+            
+                        <p><justify>Report now to us if you find any bugs</justify></p>
+            
+                        <button>Report</button>
+                      </div>
+            
+				</div> 
+			</nav> 
+		</div> 
+		<div class="main"> 
+
+			<div class="searchbar2"> 
+				<input type="text"
+					name=""
+					id=""
+					placeholder="Search"> 
+				<div class="searchbtn"> 
+				<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+						class="icn srchicn"
+						alt="search-button"> 
+				</div> 
+			</div> 
+
+			<div class="box-container"> 
+<!-- Box 1 - Balance -->
+<div class="box box1">
+    <i style='font-size:24px' class='fas'>&#xf3e2;</i>
+    <div class="text">
+        <h2 class="topic-heading">60.5k</h2>
+        <h2 class="topic">Balance</h2>
+    </div>
+</div>
+
+<!-- Box 2 - Savings -->
+<div class="box box2">
+    <i style='font-size:24px' class='fas'>&#xf155;</i>
+    <div class="text">
+        <h2 class="topic-heading">150</h2>
+        <h2 class="topic">Savings</h2>
+    </div>
+</div>
+
+<!-- Box 3 - Income -->
+<div class="box box3">
+    <i style='font-size:24px' class='fas'>&#xf155;</i> <!-- Replace with appropriate income icon -->
+    <div class="text">
+        <h2 class="topic-heading">320</h2>
+        <h2 class="topic">Income</h2>
+    </div>
+</div>
+
+<!-- Box 4 - Expenditure -->
+<div class="box box4">
+    <i style='font-size:24px' class='fas'>&#xf155;</i> <!-- Replace with appropriate expenditure icon -->
+    <div class="text">
+        <h2 class="topic-heading">70</h2>
+        <h2 class="topic">Expenditure</h2>
+    </div>
+</div>
+
+
+				</div>
+
+			<div class="report-container"> 
+              
+
+				<div class="report-header"> 
+                    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+                    <script>
+                    const xValues = [100,200,300,400,500,600,700,800,900,1000];
+                    
+                    new Chart("myChart", {
+                      type: "line",
+                      data: {
+                        labels: xValues,
+                        datasets: [{ 
+                          data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+                          borderColor: "red",
+                          fill: false
+                        }, { 
+                          data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+                          borderColor: "green",
+                          fill: false
+                        }, { 
+                          data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+                          borderColor: "blue",
+                          fill: false
+                        }]
+                      },
+                      options: {
+                        legend: {display: false}
+                      }
+                    });
+                    </script>
+				</div> 
+
+				
+
+					
+
+						
+
+					</div> 
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+
+	<script src="./index.js"></script> 
+</body> 
 </html>
